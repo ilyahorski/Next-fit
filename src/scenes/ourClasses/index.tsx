@@ -1,21 +1,29 @@
 'use client';
 
-import { SelectedPage, ClassType } from '@/shared/types';
+import { SelectedPage } from '@/types';
 import { motion } from 'framer-motion';
-import HText from '@/shared/HText';
 import Class from './Class';
 import { useAppDispatch } from '@/redux/hooks';
-import { setCurrentPage } from '@/redux/slice';
-import { classes } from '@/data/classes';
+import { setCurrentPage } from '@/redux/homePageSlice';
+import 'react-multi-carousel/lib/styles.css';
+import React, { useRef } from 'react';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import { useTranslations } from 'next-intl';
 
 const OurClasses = () => {
   const dispatch = useAppDispatch();
+  const ref = useRef<HTMLDivElement>(null);
+  const t = useTranslations('Our Classes');
+
+  useIntersectionObserver(ref, (entries) => {
+    if (entries[0].isIntersecting) {
+      dispatch(setCurrentPage(t('Main')));
+    }
+  }, {});
 
   return (
-    <section id='ourclasses' className='w-full bg-primary-100 py-40'>
-      <motion.div
-        onViewportEnter={() => dispatch(setCurrentPage(SelectedPage.OurClasses))}
-      >
+    <section id={t('Main')} className='w-full bg-primary-100 dark:bg-gray-100 py-40'>
+      <motion.div>
         <motion.div
           className='mx-auto w-5/6'
           initial='hidden'
@@ -28,26 +36,14 @@ const OurClasses = () => {
           }}
         >
           <div className='md:w-3/5'>
-            <HText>OUR CLASSES</HText>
-            <p className='py-5'>
-              Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-              tellus quam porttitor. Mauris velit euismod elementum arcu neque
-              facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-              enim mattis odio in risus nunc.
+            <h1 className='basis-3/5 font-montserrat text-3xl font-bold' ref={ref}>{t('Title')}</h1>
+            <p className='py-5 h-[150px]'>
+              {t('Overview')}
             </p>
           </div>
         </motion.div>
-        <div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
-          <ul className='w-[2800px] whitespace-nowrap'>
-            {classes.map((item: ClassType, index) => (
-              <Class
-                key={`${item.name}-${index}`}
-                name={item.name}
-                description={item.description}
-                image={item.image}
-              />
-            ))}
-          </ul>
+        <div>
+          <Class />
         </div>
       </motion.div>
     </section>

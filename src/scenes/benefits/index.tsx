@@ -1,8 +1,7 @@
 'use client';
 
-import ActionButton from '@/shared/ActionButton';
-import HText from '@/shared/HText';
-import { BenefitType, SelectedPage } from '@/shared/types';
+import ActionButton from '@/scenes/ActionButton';
+import { BenefitType, SelectedPage } from '@/types';
 import {
   HomeModernIcon,
   UserGroupIcon,
@@ -11,28 +10,28 @@ import {
 import { motion } from 'framer-motion';
 import Benefit from './Benefit';
 import { useAppDispatch } from '@/redux/hooks';
-import { setCurrentPage } from '@/redux/slice';
+import { setCurrentPage } from '@/redux/homePageSlice';
 import Image from 'next/image';
-import BenefitsPageGraphic from '@/../public/BenefitsPageGraphic.png';
+import BenefitsPageGraphic from '@/../public/image6.jpg';
+import React, { useRef } from 'react';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import { useTranslations } from 'next-intl';
 
 const benefits: Array<BenefitType> = [
   {
     icon: <HomeModernIcon className='h-6 w-6' />,
-    title: 'State of the Art Facilities',
-    description:
-      'Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.',
+    title: 'Cutting-edge Equipment',
+    description: 'Cutting-edge Equipment Benefits',
   },
   {
     icon: <UserGroupIcon className='h-6 w-6' />,
-    title: '100\'s of Diverse Classes',
-    description:
-      'Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.',
+    title: 'Professional Trainers',
+    description: 'Professional Trainers Benefits',
   },
   {
     icon: <AcademicCapIcon className='h-6 w-6' />,
-    title: 'Expert and Pro Trainers',
-    description:
-      'Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.',
+    title: 'Wide Variety of Classes',
+    description: 'Wide Variety of Classes Benefits',
   },
 ];
 
@@ -43,15 +42,38 @@ const container = {
   },
 };
 
-const Benefits = () => {
+const Benefits: React.FC = () => {
   const dispatch = useAppDispatch();
+  const ref = useRef<HTMLDivElement>(null);
+  const t = useTranslations('Benefits');
+
+  useIntersectionObserver(ref, (entries) => {
+    if (entries[0].isIntersecting) {
+      dispatch(setCurrentPage(t('Main')));
+    }
+  }, {});
 
   return (
-    <section id='benefits' className='mx-auto min-h-full w-5/6 py-20'>
-      <motion.div
-        onViewportEnter={() => dispatch(setCurrentPage(SelectedPage.Benefits))}
-      >
+    <section id={t('Main')} className='min-h-full w-full py-20 bg-gray-50 dark:bg-gray-800'>
+      <div className='mx-auto w-5/6'>
         {/* HEADER */}
+        <motion.div
+          className='mt-5 items-center justify-around gap-4 md:flex'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
+          {benefits.map((benefit: BenefitType) => (
+            <Benefit
+              key={benefit.title}
+              icon={benefit.icon}
+              title={t(benefit.title)}
+              description={t(benefit.description)}
+            />
+          ))}
+        </motion.div>
+
         <motion.div
           className='md:my-5 md:w-3/5'
           initial='hidden'
@@ -63,36 +85,19 @@ const Benefits = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <HText>MORE THAN JUST GYM.</HText>
-          <p className='my-5 text-sm'>
-            We provide world class fitness equipment, trainers and classes to
-            get you to your ultimate fitness goals with ease. We provide true
-            care into each and every member.
+          {t('Title')}
+          <h1 className='basis-3/5 font-montserrat text-3xl font-bold'></h1>
+          <p className='my-5 text-sm' ref={ref}>
+            {t('Community Benefits')}
           </p>
         </motion.div>
-
         {/* BENEFITS */}
-        <motion.div
-          className='mt-5 items-center justify-between gap-8 md:flex'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.5 }}
-          variants={container}
-        >
-          {benefits.map((benefit: BenefitType) => (
-            <Benefit
-              key={benefit.title}
-              icon={benefit.icon}
-              title={benefit.title}
-              description={benefit.description}
-            />
-          ))}
-        </motion.div>
 
         {/* GRAPHICS AND DESCRIPTION */}
         <div className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex relative'>
           {/* GRAPHIC */}
-          <Image quality={100} className='mx-auto' alt='benefits-page-graphic' src={BenefitsPageGraphic} />
+          <Image quality={100} width={550} height={450} className='mx-auto pb-10' alt='benefits-page-graphic'
+                 src={BenefitsPageGraphic} />
 
           {/* DESCRIPTION */}
           <div>
@@ -109,10 +114,9 @@ const Benefits = () => {
                     visible: { opacity: 1, x: 0 },
                   }}
                 >
-                  <HText>
-                    MILLIONS OF HAPPY MEMBERS GETTING{' '}
-                    <span className='text-primary-500'>FIT</span>
-                  </HText>
+                  <h1 className='basis-3/5 font-montserrat text-3xl font-bold'>
+                    {t('Title1')}
+                  </h1>
                 </motion.div>
               </div>
             </div>
@@ -129,32 +133,24 @@ const Benefits = () => {
               }}
             >
               <p className='my-5'>
-                Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
-                egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-                fames vitae vitae quis. Quis amet vulputate tincidunt at in
-                nulla nec. Consequat sed facilisis dui sit egestas ultrices
-                tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                Felis orci diam odio.
+                {t('Flexible Timings Benefits')}
               </p>
-              <p className='mb-5'>
-                Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-                tellus quam porttitor. Mauris velit euismod elementum arcu neque
-                facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-                enim mattis odio in risus nunc.
-              </p>
+              {/*<p className='mb-5'>*/}
+              {/*  {t('')}*/}
+              {/*</p>*/}
             </motion.div>
 
             {/* BUTTON */}
             <div className='relative mt-16'>
               <div className='before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles'>
                 <ActionButton>
-                  Join Now
+                  {t('Title2')}
                 </ActionButton>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

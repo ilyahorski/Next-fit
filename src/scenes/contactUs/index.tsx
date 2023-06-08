@@ -1,19 +1,29 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import { SelectedPage } from '@/shared/types';
+import { SelectedPage } from '@/types';
 import { motion } from 'framer-motion';
-import HText from '@/shared/HText';
 import { useAppDispatch } from '@/redux/hooks';
-import { setCurrentPage } from '@/redux/slice';
+import { setCurrentPage } from '@/redux/homePageSlice';
 import Image from 'next/image';
-import ContactUsPageGraphic from '@/../public/ContactUsPageGraphic.png';
+import ContactUsPageGraphic from '@/../public/ContactUsPageGraphic.jpg';
+import React, { useRef } from 'react';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { useTranslations } from 'next-intl';
 
 const ContactUs = () => {
   const dispatch = useAppDispatch();
+  const ref = useRef<HTMLDivElement>(null);
+  const t = useTranslations('Contact Us');
 
-  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
+
+  useIntersectionObserver(ref, (entries) => {
+    if (entries[0].isIntersecting) {
+      dispatch(setCurrentPage(t('Main')));
+    }
+  }, {});
+
+  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 dark:bg-secondary-300
   px-5 py-3 placeholder-white`;
 
   const {
@@ -30,10 +40,8 @@ const ContactUs = () => {
   };
 
   return (
-    <section id='contactus' className='mx-auto w-5/6 pt-24 pb-32'>
-      <motion.div
-        onViewportEnter={() => dispatch(setCurrentPage(SelectedPage.ContactUs))}
-      >
+    <section id={t('Main')} className='w-full pt-24 pb-32 bg-gray-50 dark:bg-gray-800'>
+      <div className='mx-auto w-5/6'>
         {/* HEADER */}
         <motion.div
           className='md:w-3/5'
@@ -46,13 +54,11 @@ const ContactUs = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <HText>
-            <span className='text-primary-500'>JOIN NOW</span> TO GET IN SHAPE
-          </HText>
-          <p className='my-5'>
-            Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
-            sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
-            adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
+          <h1 className='basis-3/5 font-montserrat text-3xl font-bold'>
+            <span className='text-primary-500'>{t('Title')}</span> {t('Title1')}
+          </h1>
+          <p ref={ref} className='my-5'>
+            {t('Form Description')}
           </p>
         </motion.div>
 
@@ -78,7 +84,7 @@ const ContactUs = () => {
               <input
                 className={inputStyles}
                 type='text'
-                placeholder='NAME'
+                placeholder={t('placeholder')}
                 {...register('name', {
                   required: true,
                   maxLength: 100,
@@ -95,7 +101,7 @@ const ContactUs = () => {
               <input
                 className={inputStyles}
                 type='text'
-                placeholder='EMAIL'
+                placeholder={t('placeholder1')}
                 {...register('email', {
                   required: true,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -111,7 +117,7 @@ const ContactUs = () => {
 
               <textarea
                 className={`${inputStyles} min-h-[48px] max-h-40`}
-                placeholder='MESSAGE'
+                placeholder={t('placeholder2')}
                 rows={4}
                 cols={50}
                 maxLength={2000}
@@ -129,26 +135,13 @@ const ContactUs = () => {
                 </p>
               )}
 
-              <input
-                className={inputStyles}
-                type='file'
-                placeholder='FILE'
-                {...register('file', {
-                  required: true,
-                })}
-              />
-              {errors.file && (
-                <p className='mt-1 text-primary-500'>
-                  {errors.file.type === 'required' &&
-                    'This field is required.'}
-                </p>
-              )}
-
               <button
                 type='submit'
-                className='mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white'
+                className='mt-5 rounded-lg px-20 py-3 transition duration-100
+                      bg-primary-400 text-gray-20 hover:bg-primary-200 hover:text-gray-500
+                      dark:bg-secondary-500 dark:text-gray-20 dark:hover:bg-secondary-300 dark:hover:text-gray-500'
               >
-                SUBMIT
+                {t('Title2')}
               </button>
             </form>
           </motion.div>
@@ -170,7 +163,7 @@ const ContactUs = () => {
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

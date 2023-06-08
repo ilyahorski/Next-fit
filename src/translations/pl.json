@@ -1,0 +1,68 @@
+{
+  "Home": {
+    "Main": "Dom",
+    "Welcome": "Witamy w naszym nowoczesnym centrum fitness.",
+    "Welcome1": "Miejsce, w którym twoje cele fitness stają się rzeczywistością!",
+    "Slogan": " poziom fitness, ",
+    "Slogan1": " poziom Ciebie!",
+    "Slogan2": "Kolejny",
+    "Title2": "Dołącz teraz"
+  },
+  "Benefits": {
+    "Main": "Korzyści",
+    "Cutting-edge Equipment Benefits": "Nasza siłownia jest wyposażona w najnowsze i najbardziej zaawansowane maszyny i ciężary do ćwiczeń, aby zapewnić Ci najlepszy możliwy trening.",
+    "Professional Trainers Benefits": "Nasi profesjonalni trenerzy są zawsze do Twojej dyspozycji, aby przewodniczyć Ci i wspierać na Twojej drodze do fitnessu.",
+    "Wide Variety of Classes Benefits": "Oferujemy szeroki zakres klas dla wszystkich poziomów sprawności fizycznej. Czy jesteś początkujący czy doświadczony sportowiec, mamy coś dla Ciebie.",
+    "Flexible Timings Benefits": "Rozumiemy, że Twój czas jest cenny. Dlatego nasza siłownia jest otwarta 24/7, dzięki czemu możesz ćwiczyć kiedy chcesz.",
+    "Community Benefits": "Dołącz do naszej społeczności fitness i znajdź motywację i wsparcie wśród osób o podobnych zainteresowaniach.",
+    "Cutting-edge Equipment": "Nowoczesny sprzęt",
+    "Professional Trainers": "Profesjonalni trenerzy",
+    "Wide Variety of Classes": "Szeroki wybór zajęć",
+    "Flexible Timings": "Elastyczne godziny otwarcia",
+    "Community": "Społeczność",
+    "Title": "WIĘCEJ NIŻ TYLKO SIŁOWNIA",
+    "Title1": "NIE MA ŻADNYCH BARIER W OSIĄGNIĘCIU CELU!",
+    "Title2": "Dołącz teraz",
+    "Title3": "",
+    "Title4": ""
+  },
+  "Our Classes": {
+    "Main": "Nasze zajęcia",
+    "Overview": "Nasze zajęcia są zaprojektowane tak, aby zaspokoić wszystkie poziomy sprawności. Niezależnie od tego, czy jesteś początkującym, czy doświadczonym entuzjastą fitnessu, mamy odpowiednie zajęcia dla Ciebie. Zapoznaj się z naszą ofertą zajęć poniżej:",
+    "Aerobics": "Rozgrzewaj swoje serce naszymi energicznymi zajęciami z aerobiku.",
+    "Yoga": "Znajdź swój wewnętrzny spokój i popraw swoją elastyczność na naszych zajęciach jogi.",
+    "Strength Training": "Buduj mięśnie i popraw swoją siłę na naszych intensywnych zajęciach treningu siłowego.",
+    "Cardio": "Popraw swoją wytrzymałość i spalaj kalorie na naszych zajęciach cardio.",
+    "Calisthenics": "Użyj własnej masy ciała, aby budować siłę i elastyczność na naszych zajęciach kalisteniki.",
+    "Functional Training": "Popraw swoją równowagę, koordynację i siłę na naszych zajęciach treningu funkcjonalnego.",
+    "Title": "NASZE SEKCJE",
+    "Aerobics Classes": "Aerobik",
+    "Yoga Classes": "Joga",
+    "Strength Training Classes": "Trening siłowy",
+    "Cardio Classes": "Kardio",
+    "Calisthenics Classes": "Rytmika",
+    "Functional Training Classes": "Trening funkcjonalny"
+  },
+  "Contact Us": {
+    "Main": "Skontaktuj się z nami",
+    "Form Description": "Chcesz dowiedzieć się więcej? Wypełnij poniższy formularz, a my skontaktujemy się z Tobą jak najszybciej.",
+    "Footer": "Znajdujemy się pod adresem Nowy Targ.",
+    "Footer1": " Czynne całą dobę.",
+    "Footer2": "Zadzwoń do nas pod numer 789668488",
+    "Footer3": "Oferujemy różnorodne zajęcia i najwyższej klasy sprzęt fitness we wspierającym i przyjaznym środowisku. Zadbajmy o formę!",
+    "Footer4": "Skontaktuj się z nami",
+    "placeholder": "IMIĘ",
+    "placeholder1": "EMAIL",
+    "placeholder2": "WIADOMOŚĆ",
+    "Title": "DOŁĄCZ TERAZ",
+    "Title1": "ABY BYĆ W KSZTAŁCIE",
+    "Title2": "SKŁADAĆ"
+  },
+  "Pages": {
+    "Home": "Dom",
+    "Benefits": "Korzyści",
+    "Our Classes": "Nasze zajęcia",
+    "Contact Us": "Skontaktuj się z nami",
+    "Title2": "Dołącz teraz"
+  }
+}

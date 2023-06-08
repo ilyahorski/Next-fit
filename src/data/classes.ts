@@ -1,42 +1,40 @@
-import { ClassType } from '@/shared/types';
-import image1 from '@/../public/image1.png';
-import image2 from '@/../public/image2.png';
-import image3 from '@/../public/image3.png';
-import image4 from '@/../public/image4.png';
-import image5 from '@/../public/image5.png';
-import image6 from '@/../public/image6.png';
+import { ClassType } from '@/types';
+import image1 from '@/../public/image1.jpg';
+import image2 from '@/../public/image2.jpg';
+import image3 from '@/../public/image3.jpg';
+import image4 from '@/../public/image4.jpg';
+import image5 from '@/../public/image5.jpg';
+import image7 from '@/../public/image7.jpg';
 
-export const classes: Array<ClassType> = [
+export const classes: ClassType[] = [
   {
-    name: 'Weight Training Classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    name: 'Aerobics Classes',
+    description: 'Aerobics',
     image: image1,
   },
   {
     name: 'Yoga Classes',
+    description: 'Yoga',
     image: image2,
   },
   {
-    name: 'Ab Core Classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    name: 'Strength Training Classes',
+    description: 'Strength Training',
     image: image3,
   },
   {
-    name: 'Adventure Classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    name: 'Cardio Classes',
+    description: 'Cardio',
     image: image4,
   },
   {
-    name: 'Fitness Classes',
+    name: 'Calisthenics Classes',
+    description: 'Calisthenics',
     image: image5,
   },
   {
-    name: 'Training Classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    image: image6,
+    name: 'Functional Training Classes',
+    description: 'Functional Training',
+    image: image7,
   },
 ];
