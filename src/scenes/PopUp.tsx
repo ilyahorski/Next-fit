@@ -36,7 +36,7 @@ const PopUp = () => {
       <Listbox value={lng}>
         <div className='relative'>
           <Listbox.Button
-            className='relative w-full h-10 cursor-default rounded-lg bg-primary-500 dark:bg-secondary-400 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
+            className='relative w-full h-10 cursor-default rounded-lg bg-primary-500 dark:bg-secondary-400 py-2 pl-2 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
             <span className='block truncate'>{lng}</span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <ChevronUpDownIcon
@@ -57,7 +57,7 @@ const PopUp = () => {
                 <Listbox.Option
                   key={langIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-3 pr-4 ${
+                    `relative cursor-default select-none py-2 pr-0.5 ${
                       active ? 'bg-gray-400 text-zinc-50' : 'text-gray-900'
                     }`
                   }
@@ -67,7 +67,7 @@ const PopUp = () => {
                     <>
                       <button
                         onClick={handleClick(lang)}
-                        className={`block truncate ${
+                        className={`flex w-full pl-2 truncate ${
                           selected ? 'font-medium' : 'font-normal'
                         }`}
                       >
