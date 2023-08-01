@@ -75,7 +75,7 @@ const Benefits: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className='md:my-5 md:w-3/5'
+          className='md:my-5 md:w-full'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.5 }}
@@ -85,9 +85,8 @@ const Benefits: React.FC = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          {t('Title')}
-          <h1 className='basis-3/5 font-montserrat text-3xl font-bold'></h1>
-          <p className='my-5 text-sm' ref={ref}>
+          <h1 className='flex text-center w-full mt-6 justify-center basis-3/5 font-montserrat text-2xs font-bold'>{t('Title')}</h1>
+          <p className='flex text-center w-full justify-center my-5 text-7xs' ref={ref}>
             {t('Community Benefits')}
           </p>
         </motion.div>
@@ -96,7 +95,7 @@ const Benefits: React.FC = () => {
         {/* GRAPHICS AND DESCRIPTION */}
         <div className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex relative'>
           {/* GRAPHIC */}
-          <Image quality={100} width={550} height={450} className='mx-auto pb-10' alt='benefits-page-graphic'
+          <Image quality={100} width={750} height={650} className='mx-auto pb-10' alt='benefits-page-graphic'
                  src={BenefitsPageGraphic} />
 
           {/* DESCRIPTION */}
@@ -114,7 +113,7 @@ const Benefits: React.FC = () => {
                     visible: { opacity: 1, x: 0 },
                   }}
                 >
-                  <h1 className='basis-3/5 font-montserrat text-3xl font-bold'>
+                  <h1 className='basis-3/5 text-center font-montserrat text-6xs font-bold'>
                     {t('Title1')}
                   </h1>
                 </motion.div>
@@ -132,7 +131,7 @@ const Benefits: React.FC = () => {
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              <p className='my-5'>
+              <p className='my-5 text-4xs'>
                 {t('Flexible Timings Benefits')}
               </p>
               {/*<p className='mb-5'>*/}
@@ -141,12 +140,10 @@ const Benefits: React.FC = () => {
             </motion.div>
 
             {/* BUTTON */}
-            <div className='relative mt-16'>
-              <div className='before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles'>
-                <ActionButton>
-                  {t('Title2')}
-                </ActionButton>
-              </div>
+            <div className='flex w-full justify-center relative mt-16'>
+              <ActionButton>
+                {t('Title2')}
+              </ActionButton>
             </div>
           </div>
         </div>

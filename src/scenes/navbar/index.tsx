@@ -13,7 +13,6 @@ import logo from '@/../public/HomePageText.png';
 import logoLight from '@/../public/NEXT FIT (3).png';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { setCurrentPage, setIsTopOfPage } from '@/redux/homePageSlice';
-import { SelectedPage } from '@/types';
 import { useTranslations } from 'next-intl';
 import PopUp from '@/scenes/PopUp';
 
@@ -23,8 +22,8 @@ const Navbar = () => {
   const darkMode = useAppSelector(state => state.mode.theme);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1400px)');
   const navbarBackground = isTopOfPage ?
-    'bg-primary-100 drop-shadow dark:bg-gray-100' :
-    'bg-primary-500 drop-shadow dark:bg-gray-800 ';
+    'bg-primary-700 drop-shadow dark:bg-primary-800' :
+    'bg-secondary-700 drop-shadow dark:bg-secondary-800';
   const flexBetween = 'flex items-center justify-between';
   const colorTheme = darkMode ? 'dark' : '';
   const ref = useRef<HTMLDivElement | null>(null);
@@ -59,7 +58,7 @@ const Navbar = () => {
   return (
     <nav>
       <div ref={topRef} style={{ height: '1px', opacity: 0 }} />
-      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6 drop-shadow-lg`}>
+      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full h-20 py-6 drop-shadow-lg`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-8`}>
             {/* LEFT SIDE */}
@@ -119,7 +118,7 @@ const Navbar = () => {
                 </div>
                 <PopUp />
                 <button
-                  className='rounded-full bg-secondary-500 p-2'
+                  className='rounded-full bg-primary-500 dark:bg-secondary-400 p-2'
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   <Bars3Icon className='h-6 w-6 text-white' />

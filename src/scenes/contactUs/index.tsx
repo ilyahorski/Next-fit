@@ -40,11 +40,12 @@ const ContactUs = () => {
   };
 
   return (
-    <section id={t('Main')} className='w-full pt-24 pb-32 bg-gray-50 dark:bg-gray-800'>
-      <div className='mx-auto w-5/6'>
+    <section id={t('Main')} className='relative w-full text-8xs bg-gray-50 dark:bg-gray-800 '>
+      <Image quality={100} className='w-full z-50' alt='contact-us-page-graphic' src={ContactUsPageGraphic} />
+      <div className='flex flex-row l:absolute l:top-20 l:left-10 ml:flex-col mx-auto w-5/6'>
         {/* HEADER */}
         <motion.div
-          className='md:w-3/5'
+          className='max-w-[1000px] us:absolute us:top-10 us:left-10 us:right-10 l:static'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.5 }}
@@ -54,18 +55,18 @@ const ContactUs = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <h1 className='basis-3/5 font-montserrat text-3xl font-bold'>
-            <span className='text-primary-500'>{t('Title')}</span> {t('Title1')}
+          <h1 className='basis-3/5 font-montserrat text-2xl sm:text-5xl text-white font-bold'>
+            <span className='text-white'>{t('Title')}</span> {t('Title1')}
           </h1>
-          <p ref={ref} className='my-5'>
+          <p ref={ref} className='text-xl sm:text-3xl text-white my-5'>
             {t('Form Description')}
           </p>
         </motion.div>
 
         {/* FORM AND IMAGE */}
-        <div className='mt-10 justify-between gap-8 md:flex'>
+        <div className='flex max-w-[1000px] mb-2 justify-between gap-8'>
           <motion.div
-            className='mt-10 basis-3/5 md:mt-0'
+            className='mt-10 md:mt-0'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.5 }}
@@ -146,22 +147,22 @@ const ContactUs = () => {
             </form>
           </motion.div>
 
-          <motion.div
-            className='relative mt-16 basis-2/5 md:mt-0'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <div
-              className='w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext relative'>
-              <Image quality={100} className='w-full' alt='contact-us-page-graphic' src={ContactUsPageGraphic} />
-            </div>
-          </motion.div>
+          {/*<motion.div*/}
+          {/*  className='relative mt-16 basis-2/5 md:mt-0'*/}
+          {/*  initial='hidden'*/}
+          {/*  whileInView='visible'*/}
+          {/*  viewport={{ once: true, amount: 0.5 }}*/}
+          {/*  transition={{ delay: 0.2, duration: 0.5 }}*/}
+          {/*  variants={{*/}
+          {/*    hidden: { opacity: 0, y: 50 },*/}
+          {/*    visible: { opacity: 1, y: 0 },*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  <div*/}
+          {/*    className='w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext relative'>*/}
+          {/*    <Image quality={100} className='w-full' alt='contact-us-page-graphic' src={ContactUsPageGraphic} />*/}
+          {/*  </div>*/}
+          {/*</motion.div>*/}
         </div>
       </div>
     </section>

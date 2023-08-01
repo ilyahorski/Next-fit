@@ -8,12 +8,12 @@ const Class = () => {
   const t = useTranslations('Our Classes');
 
   const overlayStyles = `p-5 absolute z-20 flex
-  h-[350px] w-[450px] flex-col items-center justify-center
+  h-[450px] w-[550px] flex-col items-center justify-center
   whitespace-normal bg-primary-500 dark:bg-secondary-300 text-center text-white
   opacity-0 transition duration-200 hover:opacity-90`;
 
   return (
-    <div className='mt-10 h-[350px] w-full flex justify-between item-center'>
+    <div className='mt-10 h-[450px] w-full flex justify-between item-center'>
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -70,13 +70,13 @@ const Class = () => {
         }}
       >
         {classes.map((item: ClassType, index) => (
-          <div className='relative flex item-center justify-center mx-5 h-[350px] w-[450px]'
+          <div className='relative flex item-center justify-center mx-5 h-[450px] w-[550px]'
                key={`${item.name}-${index}`}>
             <div className={overlayStyles}>
-              <p className='text-2xl'>{t(item.name)}</p>
-              <p className='mt-5'>{t(item.description)}</p>
+              <p className='text-6xs'>{t(item.name)}</p>
+              <p className='mt-5 text-[20px]'>{t(item.description)}</p>
             </div>
-            <Image width={450} height={350} quality={100} alt={`${item.image}`} src={item.image} />
+            <Image width={550} height={450} quality={100} alt={`${item.image}`} src={item.image} />
           </div>
         ))}
       </Carousel>

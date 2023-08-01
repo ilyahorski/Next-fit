@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { useAppDispatch } from '@/redux/hooks';
 import { setCurrentPage } from '@/redux/homePageSlice';
 import Image from 'next/image';
-import HomePageText from '@/../public/HomePageText.png';
+import HomePageText from '@/../public/bk.png';
 import HomePageGraphic from '@/../public/HomePageGraphic.jpg';
 import { useTranslations } from 'next-intl';
 
@@ -15,13 +15,13 @@ const Home = () => {
   const t = useTranslations('Home');
 
   return (
-    <section id={t('Main')} className='gap-16 py-10 md:h-full md:pb-0 bg-primary-100 dark:bg-gray-100'>
+    <section id={t('Main')} className='w-full mt-20 content-hometext'>
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
-        className='mx-auto w-5/6 items-center justify-center md:flex md:h-5/6'
+        className='mx-auto w-full h-32 items-center justify-center md:flex md:h-5/6 border-2 border-red-700'
       >
         {/* MAIN HEADER */}
-        <div className='z-10 mt-32 w-full'>
+        <div className='flex z-10 mt-32 h-32'>
           {/* HEADINGS */}
           <motion.div
             className='md:-mt-20'
@@ -34,12 +34,13 @@ const Home = () => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <div className='relative'>
-              <div
-                className='before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-hometext relative'>
-                <Image quality={100} alt='home-page-text' src={HomePageText} />
-              </div>
-            </div>
+            <Image className='absolute' fill={true} quality={100} alt='home-page-text' src={HomePageText} />
+            {/*<div className='relative'>*/}
+            {/*  <div*/}
+            {/*    className='flex h-[500] w-[500] relative'>*/}
+            {/*    */}
+            {/*  </div>*/}
+            {/*</div>*/}
 
             <div className='mt-8 text-lg'>
               <p>{t('Welcome')}</p>
@@ -57,14 +58,13 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* IMAGE */}
+        
         <div
           className='md:flex basis-3/5 justify-center hidden md:z-10
               md:ml-40 md:mt-16 md:justify-items-end relative'
         >
-          <Image width={500} height={700} quality={100} alt='home-pageGraphic'
-                 src={HomePageGraphic} />
+          {/*<Image width={500} height={700} quality={100} alt='home-pageGraphic'*/}
+          {/*       src={HomePageGraphic} />*/}
         </div>
       </motion.div>
     </section>

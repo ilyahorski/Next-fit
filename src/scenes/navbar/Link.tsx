@@ -15,8 +15,8 @@ const Link = ({ page }: Props) => {
 
   return (
     <AnchorLink
-      className={`${selectedPage === page ? 'text-secondary-100 dark:text-primary-500' : ''}
-        transition duration-100 text-lg hover:text-secondary-100 dark:hover:text-primary-500
+      className={`${selectedPage === page ? 'text-secondary-600 dark:text-secondary-500' : ''}
+        transition duration-100 text-lg hover:text-secondary-600 dark:hover:text-secondary-500
       `}
       href={`#${page}`}
       onClick={() => dispatch(setCurrentPage(page))}
