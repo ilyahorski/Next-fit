@@ -1,6 +1,5 @@
 'use client';
 
-import { SelectedPage } from '@/types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { setCurrentPage } from '@/redux/homePageSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';

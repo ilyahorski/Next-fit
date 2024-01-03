@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { classes } from '@/data/classes';
 import { ClassType } from '@/types';
@@ -13,7 +15,7 @@ const Class = () => {
   opacity-0 transition duration-200 hover:opacity-90`;
 
   return (
-    <div className='mt-10 h-[450px] w-full flex justify-between item-center'>
+    <div className='mt-10 ml-2 h-[400px] w-full flex justify-between item-center'>
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -70,13 +72,13 @@ const Class = () => {
         }}
       >
         {classes.map((item: ClassType, index) => (
-          <div className='relative flex item-center justify-center mx-5 h-[450px] w-[550px]'
+          <div className='relative flex item-center justify-center mx-5 h-[400px] w-[550px]'
                key={`${item.name}-${index}`}>
             <div className={overlayStyles}>
               <p className='text-6xs'>{t(item.name)}</p>
               <p className='mt-5 text-[20px]'>{t(item.description)}</p>
             </div>
-            <Image width={550} height={450} quality={100} alt={`${item.image}`} src={item.image} />
+            <Image width={550} height={400} quality={100} alt={`${item.image}`} src={item.image} />
           </div>
         ))}
       </Carousel>

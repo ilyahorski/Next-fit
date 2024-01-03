@@ -1,14 +1,8 @@
 'use client';
 
-import { SelectedPage } from '@/types';
-import ActionButton from '@/scenes/ActionButton';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
-import { useAppDispatch } from '@/redux/hooks';
-import { setCurrentPage } from '@/redux/homePageSlice';
 import Image from 'next/image';
 import HomePageText from '@/../public/bk.png';
-import HomePageGraphic from '@/../public/HomePageGraphic.jpg';
 import { useTranslations } from 'next-intl';
 
 const Home = () => {
@@ -35,13 +29,6 @@ const Home = () => {
             }}
           >
             <Image className='absolute' fill={true} quality={100} alt='home-page-text' src={HomePageText} />
-            {/*<div className='relative'>*/}
-            {/*  <div*/}
-            {/*    className='flex h-[500] w-[500] relative'>*/}
-            {/*    */}
-            {/*  </div>*/}
-            {/*</div>*/}
-
             <div className='mt-8 text-lg'>
               <p>{t('Welcome')}</p>
               <p>{t('Welcome1')}</p>
@@ -57,14 +44,6 @@ const Home = () => {
               </p>
             </div>
           </motion.div>
-        </div>
-        
-        <div
-          className='md:flex basis-3/5 justify-center hidden md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end relative'
-        >
-          {/*<Image width={500} height={700} quality={100} alt='home-pageGraphic'*/}
-          {/*       src={HomePageGraphic} />*/}
         </div>
       </motion.div>
     </section>

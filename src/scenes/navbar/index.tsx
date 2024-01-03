@@ -56,11 +56,11 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <nav>
-      <div ref={topRef} style={{ height: '1px', opacity: 0 }} />
-      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full h-20 py-6 drop-shadow-lg`}>
+    <nav className='max-w-full'>
+      <div ref={topRef} className='h-[1px] opacity-0' />
+      <div className={`${navbarBackground} ${flexBetween} max-w-full w-full fixed top-0 z-30 h-20 py-4 drop-shadow-lg`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
-          <div className={`${flexBetween} w-full gap-8`}>
+          <div className={`${flexBetween} w-full gap-4 `}>
             {/* LEFT SIDE */}
             <div className='flex w-[150]'>
               <Image width={150} height={50} quality={100}

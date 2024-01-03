@@ -5,3 +5,7 @@
 .dark {
   @apply text-zinc-50;
 }
+
+.main {
+  width: 100%;  
+}

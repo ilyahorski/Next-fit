@@ -19,12 +19,6 @@ const Footer = () => {
           </p>
           <p>© Next-fit Rights Reserved.</p>
         </div>
-        {/*<div className='mt-16 basis-1/4 md:mt-0'>*/}
-        {/*  <h4 className='font-bold'>Links</h4>*/}
-        {/*  <p className='my-5'>Massa orci senectus</p>*/}
-        {/*  <p className='my-5'>Et gravida id et etiam</p>*/}
-        {/*  <p>Ullamcorper vivamus</p>*/}
-        {/*</div>*/}
         <div className='mt-16 basis-1/4 md:mt-0'>
           <h4 className='font-bold'>{t('Footer4')}</h4>
           <p className='my-5'>{t('Footer')}</p>

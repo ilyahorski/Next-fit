@@ -1,7 +1,6 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import { SelectedPage } from '@/types';
 import { motion } from 'framer-motion';
 import { useAppDispatch } from '@/redux/hooks';
 import { setCurrentPage } from '@/redux/homePageSlice';
@@ -55,10 +54,10 @@ const ContactUs = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <h1 className='basis-3/5 font-montserrat text-2xl sm:text-5xl text-white font-bold'>
+          <h1 className='basis-3/5 font-montserrat text-3xl xs:text-4xl text-white font-bold'>
             <span className='text-white'>{t('Title')}</span> {t('Title1')}
           </h1>
-          <p ref={ref} className='text-xl sm:text-3xl text-white my-5'>
+          <p ref={ref} className='text-lg hidden xs:flex xs:text-2xl text-white my-5'>
             {t('Form Description')}
           </p>
         </motion.div>

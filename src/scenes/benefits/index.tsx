@@ -1,7 +1,7 @@
 'use client';
 
 import ActionButton from '@/scenes/ActionButton';
-import { BenefitType, SelectedPage } from '@/types';
+import { BenefitType } from '@/types';
 import {
   HomeModernIcon,
   UserGroupIcon,
@@ -85,8 +85,8 @@ const Benefits: React.FC = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <h1 className='flex text-center w-full mt-6 justify-center basis-3/5 font-montserrat text-2xs font-bold'>{t('Title')}</h1>
-          <p className='flex text-center w-full justify-center my-5 text-7xs' ref={ref}>
+          <h1 className='flex text-center w-full mt-6 justify-center basis-3/5 font-montserrat text-[42px] sm:text-2xs font-bold'>{t('Title')}</h1>
+          <p className='flex text-center w-full justify-center my-5 text-[36px]' ref={ref}>
             {t('Community Benefits')}
           </p>
         </motion.div>
@@ -134,9 +134,6 @@ const Benefits: React.FC = () => {
               <p className='my-5 text-4xs'>
                 {t('Flexible Timings Benefits')}
               </p>
-              {/*<p className='mb-5'>*/}
-              {/*  {t('')}*/}
-              {/*</p>*/}
             </motion.div>
 
             {/* BUTTON */}

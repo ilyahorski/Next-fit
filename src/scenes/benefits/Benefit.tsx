@@ -31,7 +31,7 @@ const Benefit = ({ icon, title, description }: Props) => {
           </div>
         </div>
 
-        <h4 className='font-bold text-4xs'>{title}</h4>
+        <h4 className='font-bold text-xl sm:text-3xs'>{title}</h4>
         <p className='my-3'>{description}</p>
         <AnchorLink
             className='text-sm font-bold text-primary-500 dark:text-primary-700 underline dark:hover:text-secondary-500 hover:text-secondary-500'

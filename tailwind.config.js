@@ -60,7 +60,7 @@ module.exports = {
       },
     },
     screens: {
-      us: '400px',
+      us: '340px',
       xs: '600px',
       sm: '768px',
       md: '1160px',

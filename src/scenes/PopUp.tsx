@@ -1,12 +1,11 @@
 'use client';
 
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
-import { Fragment, useState } from 'react';
+import { usePathname,  useRouter } from 'next/navigation';
+import { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { setCurrentPage, setLanguagePage } from '@/redux/homePageSlice';
-import { SelectedPage } from '@/types';
+import { ChevronUpDownIcon } from '@heroicons/react/20/solid';
+import { useAppDispatch } from '@/redux/hooks';
+import { setLanguagePage } from '@/redux/homePageSlice';
 
 type Lang = {
   name: string;

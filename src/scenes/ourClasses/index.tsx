@@ -1,6 +1,5 @@
 'use client';
 
-import { SelectedPage } from '@/types';
 import { motion } from 'framer-motion';
 import Class from './Class';
 import { useAppDispatch } from '@/redux/hooks';
